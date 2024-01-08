@@ -1,0 +1,89 @@
+.sidebar {
+  padding: 0;
+    width: 30vmin;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100vmax;
+    overflow: auto;
+  }
+  
+
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #242e3b;
+    color: white;
+  }
+
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #a8a1a1;
+    color: white;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-right: 35vw;
+    height: 10vmax;
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+  .sidebar span{
+    font-weight: bold;
+    font-size: 1.7vmax;
+  }
+  .sidebar .brand img{
+    height: 5vh ;
+    width: 3vw;
+    padding-left: 1vw;
+    border-radius: 4rem;
+  }
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    /* height: 1000px; */
+  }
+  
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    a {
+      text-decoration: none;
+    }
+    li {
+      list-style: none;
+    }
+    
+    html {
+      overflow-x: hidden;
+    }
+ body {
+      overflow-x: hidden;
+    }
+      

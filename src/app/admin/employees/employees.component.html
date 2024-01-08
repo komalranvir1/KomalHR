@@ -1,0 +1,44 @@
+<h3 style="text-align: center;padding-top: 6vh;">Employee Form</h3>
+
+<div class="container" style="padding: 5vw 0 0  16vw;">
+    <form [formGroup]="employeeForm" >
+
+     <div class="row">
+        <div class="col-md-4">
+            <label for="">Name</label>
+            <input type="text" name="name" id="" class="form-control" formControlName="name">
+          
+        </div>
+        <div class="col-md-4">
+            <label for="">Email</label>
+            <input type="email" name="email" id="" class="form-control"  formControlName="email">
+        </div>
+     </div>
+      <div class="row">
+        <div class="col-md-4">
+            <label for="">ContactNo</label>
+            <input type="number" name="contactNo" id="" class="form-control" formControlName="contactNo">
+        </div>
+        <div class="col-md-4">
+            <label for="">Salary</label>
+            <input type="number" name="salary" id="" class="form-control" formControlName="salary">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+            <label for="">Status</label>
+            <input type="text" name="status" id="" class="form-control" formControlName="status">
+        </div>
+        <div class="col-md-4">
+            <label for="">Join Date</label>
+            <input type="date" name="joinDate" id="" class="form-control" formControlName="joinDate">
+        </div>
+      </div>
+<br>
+      <div style="margin-left: 25%;;" >
+        <button class="btn btn-primary" type="submit" [disabled]="employeeForm.invalid" (click)="onSubmit()" >Submit</button>&nbsp;
+        <button class="btn btn-danger" (click)="cancel()">Cancel</button>
+
+      </div>
+    </form>
+</div>
