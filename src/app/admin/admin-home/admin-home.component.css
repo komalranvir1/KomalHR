@@ -1,3 +1,4 @@
+
 .sidebar {
   padding: 0;
     width: 30vmin;
@@ -28,11 +29,7 @@
     color: white;
   }
   
-  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-  div.content {
-    margin-right: 35vw;
-    height: 10vmax;
-  }
+
   
   /* On screens that are less than 700px wide, make the sidebar into a topbar */
   @media screen and (max-width: 700px) {
@@ -63,9 +60,9 @@
     border-radius: 4rem;
   }
   div.content {
-    margin-left: 200px;
-    padding: 1px 16px;
-    /* height: 1000px; */
+    margin-left: 15vw;
+    margin-right: 8vw;
+    padding: 6vh 2vw 2vh 2vw;
   }
   
   * {
@@ -75,6 +72,7 @@
     }
     a {
       text-decoration: none;
+      font-weight: bold;
     }
     li {
       list-style: none;

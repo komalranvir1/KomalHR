@@ -1,103 +1,66 @@
 <section id="content">
-  <main>
-      <!-- <div class="head-title">
-      <div class="left">
-        <h1>Dashboard</h1>
-        <ul class="breadcrumb">
-          <li>
-          </li>
-          <li><i class='bx bx-chevron-right'></i></li>
-          <li>
+    <main>
 
-          </li>
-        </ul>
-      </div>
-
-    </div>
-    <ul class="box-info">
-      <div class="card" style="background-color: aquamarine;">
-        <li>
-          <i class='bx bxs-calendar-check'></i>
-          <span class="text">
-            <h3>1020</h3>
-            <p>Tasks</p>
-          </span>
-        </li>
-      </div>
-      <div class="card" style="background-color: blueviolet;">
-        <li>
-          <i class='bx bxs-group'></i>
-          <span class="text">
-            <h3>{{totalItems}}</h3>
-            <p>Employees</p>
-          </span>
-        </li>
-      </div>
-      <div class="card" style="background-color: rgb(108, 206, 83);">
-        <li>
-          <i class='bx bxs-dollar-circle'></i>
-          <span class="text">
-            <h3>${{ totalSalary }}</h3>
-            <p>Total Salary</p>
-
-          </span>
-        </li>
-      </div>
-    </ul> -->
-      <div>
-          <div class="order">
-              <div class="head">
-                  <h3>Employees</h3>
-
-                  <button class="btn btn-outline-primary me-2" (click)="addEmployee()">Add Employee</button>
-
-              </div>
-              <br>
-              <table class="table table-bordered">
-                  <thead>
-                      <tr>
-                          <th scope="col">Employee ID</th>
-                          <th scope="col">Name</th>
-                          <th scope="col">Email</th>
-                          <th scope="col">Salary</th>
-                          <th scope="col">Action</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr *ngFor="let employee of empList">
-                          <td>{{employee.employeeId}}</td>
-                          <td>{{employee.name}}</td>
-                          <td>{{employee.email}}</td>
-                          <td>{{employee.salary}}</td>
-                          <td>
-                              <button class="btn btn-outline-primary me-2"    (click)="update(employee.employeeId)"><i class="ri-edit-box-fill"
-                                   ></i></button>
-                              <button type="button" class="btn btn-outline-danger"><i class="ri-delete-bin-6-line"
-                                      (click)="delete(employeeId)"></i></button>
-                          </td>
-
-                      </tr>
-
-                  </tbody>
-              </table>
+        <div>
+            <div class="order">
+                <div class="head">
+                    <h3>Employees</h3>
+                    <button class="btn btn-outline-primary me-2" (click)="addEmployee()">Add Employee</button>
 
 
-          </div>
-          <nav aria-label="...">
-              <ul class="pagination justify-content-center">
-                  <li class="page-item disabled">
-                      <a class="page-link" href="#" tabindex="-1">Previous</a>
-                  </li>
-                  <li class="page-item active">
-                      <a class="page-link">{{totalItems }}
-                      </a>
-                  </li>
-                  <li class="page-item">
-                      <a class="page-link" (click)="onPageChange(currentPage)">Next</a>
-                  </li>
-              </ul>
-          </nav>
+                </div>
+                <br>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Employee ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">JoinDate</th>
+                            <th scope="col">Salary</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let employee of empList">
+                            <td>{{employee.id}}</td>
+                            <td>{{employee.name}}</td>
+                            <td>{{employee.email}}</td>
+                            <td>{{employee.joinDate | date}}</td>
+                            <td>{{employee.salary}}</td>
+                            <td>
+                                <button class="btn btn-outline-primary me-2" (click)="update(employee.id)"><i
+                                        class="ri-edit-box-fill"></i></button>
+                                <button type="button" class="btn btn-outline-success" (click)="view(employee.id)"><i
+                                    class="ri-eye-fill"  ></i></button>
+                                    &nbsp;
+                                    <button type="button" class="btn btn-outline-danger" (click)="delete(employeeId)"><i class="ri-delete-bin-6-line"
+                                            ></i></button>
 
-      </div>
-  </main>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+            <nav aria-label="...">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link">{{totalItems }}
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" (click)="onPageChange(currentPage)">Next</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </main>
 </section>

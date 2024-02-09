@@ -1,0 +1,54 @@
+<div class="col-sm-6 col-lg-6 element-box">
+    <form [formGroup]="leaveForm">
+
+        <div class="row">
+            <div class="form-group col-lg-6">
+                <label for="">Select From Date</label>
+                <div class="date-input">
+                    <input formControlName="fromDate" class="form-control " daterangepicker="" required="" type="date">
+                </div>
+            </div>
+            <div class="form-group col-lg-6">
+                <label for="">Select To Date</label>
+                <div class="date-input"><input formControlName="toDate" class="form-control " daterangepicker=""
+                        name="toDate" required="" type="date"></div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for=""> Select Category</label>
+            <!-- <input type="select " formControlName="category" class="form-control" name="category" id=""> -->
+
+            <select bindlabel="type" bindvalue="id"
+                class="select form-select select-searchable untouched pristine invalid form-control"
+                formControlName="category" name="type" required="" role="listbox">
+                <option value="1">select option</option>
+                <option value="1">select option</option>
+                <option value="1">select option</option>
+                <option value="1">select option</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for=""> Are there any Half Days?
+            </label>
+            <label class="form-check-label container"><input class="form-check-input" name="optionsRadios1" required=""
+                    type="radio" value="yes"> Yes <span class="checkmark"></span></label>
+            <label class="form-check-label container"><input class="form-check-input" name="optionsRadios2" required=""
+                    type="radio" value="no">No <span class="checkmark"></span></label>
+        </div><br>
+        <div class="form-group"><label for="">Reason for Leave</label><textarea formControlName="message"
+                class="form-control " maxlength="200" minlength="3" name="message" required="" rows="4"></textarea>
+        </div><br>
+        <!-- <div class="form-group"><label class="upload-button"><input type="file">
+                <div>(Allowed file extensions are .pdf, .png, .jpeg, .jpg, .docx)</div>
+            </label></div> -->
+            <br>
+        <div class="action-buttons-container col-lg-12">
+            <button class="ml-4 btn btn-danger btn-medium " (click)="close()" tabindex="0"> Close
+            </button>&nbsp;
+            <button class="ml-4 btn btn-medium btn-primary" type="submit" (click)="submit()"
+                [disabled]="leaveForm.invalid"><span> Submit</span><i class="fa fa-spinner spinner"></i></button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,61 @@
+.red-button {
+  background-color: #e74c3c;
+  color: #1a1717;
+
+}
+
+.btn {
+  align-items: start;
+  text-align: start;
+}
+
+
+/* .atdBtn {
+  
+  padding-left: 25%;
+  align-items: center;
+  height: 40vh;
+  width: 40vw;
+  background-color: rgb(183, 193, 201);
+} */
+
+h4 {
+  font-weight: bold;
+  /* padding: 20vh; */
+}
+
+i {
+  font-weight: bold;
+}
+.row{
+  padding: 0vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+.card{
+height: 60vh;
+}
+#one{
+  width: 26vw;
+}
+#two{
+  width: 26vw;
+
+}
+#three{
+  width: 27vw;
+}
+.down{
+  justify-content: space-evenly;
+  display: flex;
+}
+#four{
+  width: 26vw;
+}
+#five{
+  width: 26vw;
+
+}
+#six{
+  width: 27vw;
+}

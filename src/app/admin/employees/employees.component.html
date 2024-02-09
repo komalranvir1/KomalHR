@@ -1,18 +1,22 @@
-<h3 style="text-align: center;padding-top: 6vh;">Employee Form</h3>
+<h3 >Employee Form</h3>
 
-<div class="container" style="padding: 5vw 0 0  16vw;">
+<div class="container" style="padding: 3vw 6vw 0vw  0vw;">
     <form [formGroup]="employeeForm" >
 
      <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <label for="">Name</label>
             <input type="text" name="name" id="" class="form-control" formControlName="name">
           
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <label for="">Email</label>
             <input type="email" name="email" id="" class="form-control"  formControlName="email">
         </div>
+        <div class="col-md-3">
+          <label for="">Password</label>
+          <input type="password" name="password" id="" class="form-control"  formControlName="password">
+      </div>
      </div>
       <div class="row">
         <div class="col-md-4">
@@ -30,8 +34,8 @@
             <input type="text" name="status" id="" class="form-control" formControlName="status">
         </div>
         <div class="col-md-4">
-            <label for="">Join Date</label>
-            <input type="date" name="joinDate" id="" class="form-control" formControlName="joinDate">
+            <label for="join_date">Join Date</label>
+            <input type="date" name="join_date" id="" class="form-control" formControlName="joinDate">
         </div>
       </div>
 <br>

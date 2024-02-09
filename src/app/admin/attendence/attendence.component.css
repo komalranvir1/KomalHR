@@ -1,0 +1,21 @@
+h5{
+color: darkblue;
+}
+label{
+    color: white;
+}
+
+.box{
+    width: 75vmax;
+    height:35vmin;
+    padding: 10vh;
+    background-color: rgb(31, 31, 71);
+    position: relative;
+}
+div form{
+    justify-content: space-evenly;
+
+}
+.btns{
+    padding-top: 3vh;
+}

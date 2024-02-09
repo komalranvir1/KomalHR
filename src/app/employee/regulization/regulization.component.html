@@ -1,0 +1,60 @@
+<div class="element-box">
+    <p-card styleClass="user-form" class="flex justify-content-center">
+        <h4 id="text">Regulization Request Form</h4>
+        <form [formGroup]="userForm" (ngSubmit)="addUser()" novalidate>
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label for="indate" class="block">In Date </label>
+                    <input type="date" pInputText placeholder="In date" formControlName="indate" />
+                </div>
+
+                <div class="col-md-3">
+                    <label for="">inTime</label>
+                    <input type="time" pInputText formControlName="inTime" />
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="date" class="block">Out Date</label>
+                    <input type="date" pInputText placeholder="outDate" formControlName="outDate" />
+
+                </div>
+                <div class="col-md-3">
+                    <label for="">OutTime</label>
+
+                    <input type="time" pInputText formControlName="outTime" placeholder="" />
+
+                </div>
+            </div>
+
+            <br>
+            <div>
+                <div class="col-md-7">
+                    <label for=""> Select Reasons</label>
+
+                    <select class="form-control" formControlName="reason">
+                        <option value="1" disabled selected>select Reasons</option>
+                        <option value="Access Not Available">Access Not Available</option>
+                        <option value="Card / FingerPrint not working">Card / FingerPrint not working</option>
+                        <option value="Forgot to mark attendence">Forgot to mark attendence</option>
+                        <option value="Forgot to mark attendence">other</option>
+
+                    </select>
+
+                </div>
+                <div class="col-md-7">
+                    <label for="">Remarks</label>
+                    <textarea pKeyFilter="int" rows="3" pInputTextarea placeholder="Remarks" formControlName="remarks"></textarea>
+                </div>
+                <br>
+            </div>
+
+          
+            <button class="btn btn-primary" type="submit" label="Submit" [disabled]="userForm.invalid">submit</button>
+            &nbsp;<button class="btn btn-danger" type="close" label="close" (click)="close()">Close</button>
+
+        </form>
+    </p-card>
+</div>

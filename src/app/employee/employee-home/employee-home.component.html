@@ -1,0 +1,75 @@
+
+<div *ngIf="!isShowable">
+  <form [formGroup]="loginForm">
+    <div class="col-md-3">
+      <label for="">User Name</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="col-md-3">
+      <label for="">Password</label>
+      <input type="password" class="form-control" formControlName="password">
+    </div><br>
+    <div>
+      <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid" (click)="submit()">Submit</button>
+
+    </div>
+
+  </form>
+</div><br>
+
+<div class="row">
+  <div class="card" id="one">
+    <div class="card-body">
+      <h5 class="card-title">Announcements</h5>
+      <h6 class="card-subtitle mb-2 text-muted"></h6>
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+  
+    </div>
+  </div>
+  <div class="card"  id="two">
+    <div class="card-body">
+      <h5 class="card-title">Work Anniversery</h5>
+      <h6 class="card-subtitle mb-2 text-muted"></h6>
+  
+    </div>
+  </div>
+  <div class="card"  id="three" >
+    <div class="card-body">
+      <h5 class="card-title">New Hires</h5>
+      <h6 class="card-subtitle mb-2 text-muted"></h6>
+  
+    </div>
+  </div>
+</div><br>
+<div class="down">
+  <div class="card" id="four">
+    <div class="card-body">
+      <h5 class="card-title">Favourites</h5>
+      <h6 class="card-subtitle mb-2 text-muted"></h6>
+  
+    </div>
+  </div>
+  <div class="card"  id="five">
+    <div class="card-body">
+      <h5 class="card-title">Request for Approval</h5>
+      <h6 class="card-subtitle mb-2 text-muted"></h6>
+  
+    </div>
+  </div>
+  <div class="card"  id="six" >
+    <div class="card-body">
+      <h5 class="card-title">Attendence</h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+      </h6>
+  
+    </div>
+  </div>
+</div>
+
+<div class="atdBtn">
+
+
+  <!-- <h4 style="padding-top: 5vh;">Web CheckIn</h4> -->
+
+
+</div>

@@ -1,0 +1,28 @@
+td {
+
+    background-color: rgb(251, 238, 254);
+
+}
+
+h2 {
+    text-align: center;
+    font-size: larger;
+}
+
+th {
+    background-color: #242e3b;
+    color: white;
+}
+
+.parent {
+    display: flex;
+}
+
+.child1 {
+    text-align: center;
+}
+
+.child2 {
+    margin-left: 50vw;
+    position: relative;
+}

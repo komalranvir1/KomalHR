@@ -17,6 +17,8 @@ export class AdminHomeComponent {
 
 
   ngOnInit(): void {
+  
+    
     this.setActive();
   }
 
@@ -32,7 +34,7 @@ export class AdminHomeComponent {
 
   Home() { 
     let promiseData = new Promise((resolved, reject) => {
-      this.router.navigateByUrl('/admin');
+      this.router.navigateByUrl('/admin/home');
       resolved(10);
     });
     promiseData.then(() => {
@@ -51,14 +53,25 @@ export class AdminHomeComponent {
       });
   }
   Salary(){
-    this.router.navigateByUrl('employee/salary')
-
+    let promiseData = new Promise((resolved, reject) => {
+      this.router.navigateByUrl('/admin/salary');
+      resolved(10);
+    });
+    promiseData.then(() => {
+      this.setActive();
+    });
   }
   contact(){
     this.router.navigateByUrl('contact')
   }
   attendence() {
-    this.router.navigateByUrl('attendence')
+    let promiseData = new Promise((resolved, reject) => {
+      this.router.navigateByUrl('/admin/attendence');
+      resolved(10);
+    });
+    promiseData.then(() => {
+      this.setActive();
+    });
 
   }
 }

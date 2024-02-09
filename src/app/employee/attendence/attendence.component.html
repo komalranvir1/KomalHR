@@ -1,0 +1,29 @@
+<div class="parent">
+<div class="child1">
+    <h2>Attendance Records</h2>
+
+</div><div class="child2"><button  class="btn btn-outline-info"  (click)="reg()">Request For Regulization</button>
+</div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Employee Name</th>
+            <th>Date</th>
+            <th>Check-In</th>
+            <th>Check-Out</th>
+            <th>Total Hours</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let attendance of attendanceList">
+            <td> Manisha</td>
+            <td> {{attendance.date}}</td>
+            <td>{{ attendance.checkIn }}</td>
+            <td>{{ attendance.checkOut }}</td>
+            <td>{{ attendance.workingHour }}</td>
+
+        </tr>
+    </tbody>
+</table>

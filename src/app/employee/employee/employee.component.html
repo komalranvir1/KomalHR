@@ -1,0 +1,41 @@
+<!-- <app-header></app-header> -->
+<div class="sidebar">
+    <a class="brand">
+      <!-- <img src="assets/image/img/images.jpg" alt=""> -->
+      <span class="text">HR HUB</span>
+    </a>
+  
+    <a [ngClass]="{'active': step==='home'}" (click)="Home()">Home &nbsp;<i class="ri-home-2-fill"></i></a>
+  
+    <a [ngClass]="{'active': step==='profile'}" (click)="profile()">Profile &nbsp;<i class="ri-user-fill"></i></a>
+  
+    <a [ngClass]="{'active': step==='attendence'}" (click)="attendence()">Attendence &nbsp;</a>
+
+  
+    
+  </div>
+  <!-- Page content -->
+  <div class="content">
+    <div class="header">
+      <nav class="navbar navbar-light">
+        <div class="container-fluid ">
+          <div class="time">
+            {{ elapsedTime | date: "HH:mm:ss" }}
+            
+          </div>
+          <div> <button class="btn"
+              [ngClass]="{'green-button': currentState === 'checkin', 'red-button': currentState === 'checkout'}"
+              (click)="onClickButton()">
+              {{ currentState === 'checkin' ? 'Checkin' : 'Checkout' }}  <i class="ri-timer-fill"></i>
+            </button></div>
+            <div>
+              <button  class="btn btn-outline-primary" (click)="Leave()">Apply Leave</button>&nbsp;
+              <button class="btn btn-success" type="button">Log Time</button>
+            </div>
+        </div>
+      </nav>
+    </div>
+    
+    <router-outlet></router-outlet>
+  
+  </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EmployeeService } from '../../service/employee.service';
+import { EmployeeService } from '../../employee/service/employee.service';
 
 @Component({
   selector: 'app-employees',
@@ -14,14 +14,14 @@ export class EmployeesComponent implements OnInit {
   submitted = false;
   formData: any;
   emp: any;
-  employeeId:any;
+  employeeId: any;
   empList: any;
-  currentPage: number=0;
-  pageSize: number=5;
+  currentPage: number = 0;
+  pageSize: number = 5;
   totalSalary: any;
   totalEmployee: any;
   totalItems: any;
-  constructor(private employeeServce: EmployeeService, private activatedRoute: ActivatedRoute,private fb: FormBuilder, private router: Router) {
+  constructor(private employeeServce: EmployeeService, private activatedRoute: ActivatedRoute, private fb: FormBuilder, private router: Router) {
     this.employeeForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', Validators.required],
@@ -29,6 +29,8 @@ export class EmployeesComponent implements OnInit {
       joinDate: ['', Validators.required],
       contactNo: ['', Validators.required],
       status: ['', Validators.required],
+      password: ['', Validators.required],
+
     });
   }
   ngOnInit(): void {
@@ -37,11 +39,6 @@ export class EmployeesComponent implements OnInit {
     if (this.employeeId) {
       this.getEmployeeById(this.employeeId)
     }
-    this.getAllEmployee();
-    //this.updateProduct() 
-
-  
-
     this.onSubmit();
 
   }
@@ -71,59 +68,42 @@ export class EmployeesComponent implements OnInit {
     this.router.navigateByUrl('admin/employee-list')
   }
 
-  getAllEmployee() {
-    this.employeeServce.getAllEmployee(this.currentPage, this.pageSize).subscribe((res: any) => {
+  getEmployeeById(id: any) {
+    this.employeeServce.getEmployeeById(this.employeeId).subscribe((res: any) => {
       console.log(res);
-      this.empList = res.content;
-      for (const employee of this.empList) {
-        this.totalSalary += employee.salary;
-        this.totalEmployee += employee.employeeId;
-      }
-      this.totalItems = res.totalPages;
-
-
-
-    });
-
-}
-
-getEmployeeById(productId: any) {
-  this.employeeServce.getEmployeeById(this.employeeId).subscribe((res: any) => {
-    console.log(res);
-    this.employeeForm.patchValue({
-      id: res.employeeId,
-      name: res.name,
-      email: res.email,
-      salary: res.salary,
-      joinDate: res.joinDate,
-      contactNo: res.contactNo,
-      status: res.status,
+      this.employeeForm.patchValue({
+        id: res.id,
+        name: res.name,
+        email: res.email,
+        salary: res.salary,
+        join_date: res.date,
+        contactNo: res.contactNo,
+        status: res.status,
+      })
     })
-  })
-}
-saveEmployee() {
-  let EmployeeData = this.employeeForm.value;
-  console.log(EmployeeData);
-
-  // this.loder = true;
-  this.employeeServce.addEmployee(EmployeeData).subscribe((res: any) => {
-    console.log(res);
-    alert("added successfull..........")
-    this.onReset();
-    this.router.navigateByUrl('admin/employee-list')
-
-  })
-}
-
-
-updateEmployee() {
-  let EmployeeData = this.employeeForm.value;
-  // this.loder = true;
-  this.employeeServce.updateEmployeeById(this.employeeId,EmployeeData).subscribe((res: any) => {
-    console.log(res);
-    this.onReset();
-  })
-  this.router.navigateByUrl('admin/employee-list')
-}
   }
+  saveEmployee() {
+    let EmployeeData = this.employeeForm.value;
+
+    console.log(EmployeeData);
+    // this.loder = true;
+    this.employeeServce.addEmployee(EmployeeData).subscribe((res: any) => {
+      console.log(res);
+
+      this.onReset();
+      this.router.navigateByUrl('admin/employee-list')
+
+    })
+  }
+
+
+  updateEmployee() {
+    let EmployeeData = this.employeeForm.value;
+    this.employeeServce.updateEmployeeById(this.employeeId, EmployeeData).subscribe((res: any) => {
+      console.log(res);
+      this.onReset();
+    })
+    this.router.navigateByUrl('admin/employee-list')
+  }
+}
 

@@ -1,0 +1,120 @@
+
+.time {
+  margin-right: 75vw;
+  color: rgb(14, 13, 13);
+}
+.red-button {
+  background-color: #e74c3c;
+  color: #1a1717;
+
+}
+.btn {
+  /* align-items: start; */
+  text-align: center;
+}
+.header {
+  margin-right: 32vw;
+  margin-top: -9vh;
+  position: relative;
+  width: 84.5vmax;
+}
+
+.navbar {
+  height: 14vh;
+ background-color: #f1f1f1;
+  /* background-color: #242e3b; */
+}
+
+.green-button {
+  background-color: green;
+  color: #ffffff;
+  position: static;
+}
+
+
+.sidebar {
+    padding: 0;
+      width: 32vmin;
+      background-color: #f1f1f1;
+      position: fixed;
+      height: 100vmax;
+      overflow: auto;
+    }
+    div.content {
+      margin-left: 12.2vw;
+     padding: 6vh 2vw 2vh 2vw; 
+   }  
+  
+    .sidebar a {
+      display: block;
+      color: black;
+      padding: 16px;
+      text-decoration: none;
+    }
+    
+    /* Active/current link */
+    .sidebar a.active {
+      background-color: #242e3b;
+      color: white;
+    }
+  
+    
+    /* Links on mouse-over */
+    .sidebar a:hover:not(.active) {
+      background-color: #a8a1a1;
+      color: white;
+    }
+    
+  a{
+    font-weight: bold;
+  }
+    
+    /* On screens that are less than 700px wide, make the sidebar into a topbar */
+    @media screen and (max-width: 700px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+      .sidebar a {float: left;}
+      div.content {margin-left: 0;}
+    }
+    
+    /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+    @media screen and (max-width: 400px) {
+      .sidebar a {
+        text-align: center;
+        float: none;
+      }
+    }
+    .sidebar span{
+      font-weight: bold;
+      font-size: 1.7vmax;
+    }
+    .sidebar .brand img{
+      height: 5vh ;
+      width: 3vw;
+      padding-left: 1vw;
+      border-radius: 4rem;
+    }
+ 
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+      }
+      li {
+        list-style: none;
+      }
+      
+      html {
+        overflow-x: hidden;
+      }
+   body {
+        overflow-x: hidden;
+      }
+        
