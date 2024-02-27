@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeService } from '../../employee/service/employee.service';
 import { Observable } from 'rxjs/internal/Observable';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-employee-list',
@@ -92,7 +93,16 @@ export class EmployeeListComponent implements OnInit {
   }
 
  
-
+  generatePdf(): void {
+    this.employeeServce.generateEmployeePdf().subscribe(
+      (response: Blob) => {
+        const file = new Blob([response], { type: 'application/pdf' });
+        const fileURL = URL.createObjectURL(file);
+        window.open(fileURL, '_blank');
+      }
+    
+    );
+  }
 
 
 

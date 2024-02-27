@@ -1,87 +1,133 @@
+.header {
+  margin-left: -1.7vw;
+  margin-right: 32vw;
+  margin-top: -9vh;
+  position: static;
+  width: 86.6vmax;
+}
+
+.navbar {
+  height: 11vh;
+  background-color: #f1f1f1;
+}
+
+div.content {
+  margin-left: 13vw;
+  margin-right: 8vw;
+  padding: 7vh 2vw 2vh 2vw;
+}
+
+.wel {
+  padding: 0.2vw;
+  margin-left: 1vw;
+  border-radius: 1.2vw;
+  width: 155px;
+  background-color: #0D6EFD;
+}
+
+#name {
+  font-size: smaller;
+  padding-right: 3vw;
+}
+
+.btns {
+  padding: 1vw;
+  margin-left: 63vw;
+}
+
+
+img {
+  height: 45px;
+  width: 45px;
+}
 
 .sidebar {
   padding: 0;
-    width: 30vmin;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100vmax;
-    overflow: auto;
+  width: 30vmin;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100vmax;
+  overflow: auto;
+}
+
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #0D6EFD;
+  color: white;
+}
+
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #a8a1a1;
+  color: white;
+}
+
+
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
   }
-  
 
   .sidebar a {
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
-  }
-  
-  /* Active/current link */
-  .sidebar a.active {
-    background-color: #242e3b;
-    color: white;
+    float: left;
   }
 
-  
-  /* Links on mouse-over */
-  .sidebar a:hover:not(.active) {
-    background-color: #a8a1a1;
-    color: white;
+  div.content {
+    margin-left: 0;
   }
-  
+}
 
-  
-  /* On screens that are less than 700px wide, make the sidebar into a topbar */
-  @media screen and (max-width: 700px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
-  }
-  
-  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-  @media screen and (max-width: 400px) {
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+/* @media screen and (max-width: 400px) {
     .sidebar a {
       text-align: center;
       float: none;
     }
-  }
-  .sidebar span{
-    font-weight: bold;
-    font-size: 1.7vmax;
-  }
-  .sidebar .brand img{
-    height: 5vh ;
-    width: 3vw;
-    padding-left: 1vw;
-    border-radius: 4rem;
-  }
-  div.content {
-    margin-left: 15vw;
-    margin-right: 8vw;
-    padding: 6vh 2vw 2vh 2vw;
-  }
-  
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    a {
-      text-decoration: none;
-      font-weight: bold;
-    }
-    li {
-      list-style: none;
-    }
-    
-    html {
-      overflow-x: hidden;
-    }
- body {
-      overflow-x: hidden;
-    }
-      
+  } */
+.sidebar span {
+  font-weight: bold;
+  font-size: 1.7vmax;
+}
+
+.sidebar .brand img {
+  height: 2vh;
+  width: 3vw;
+  padding-left: 1vw;
+  border-radius: 4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+li {
+  list-style: none;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}

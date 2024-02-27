@@ -14,6 +14,8 @@ import { SalaryComponent } from './salary/salary.component';
 import { DialogModule } from 'primeng/dialog';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { HolidaysComponent } from './holidays/holidays.component';
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     AdminComponent,
     EmployeeDetailComponent,
     SalaryComponent,
+    HolidaysComponent,
   ],
   imports: [
     CommonModule,
@@ -35,6 +38,9 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     DialogModule,
     OverlayPanelModule,
     AutoCompleteModule,
+    ButtonModule
+
+    
   ]
 })
 export class AdminModule { }

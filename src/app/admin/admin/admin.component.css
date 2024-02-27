@@ -2,19 +2,6 @@ h5 {
     text-align: center;
 }
 
-.wel {
-    text-align: center;
-    margin-left: 25vw;
-    border-radius: 1.2vw;
-    width: 180px;
-    background-color: rgb(77, 135, 156);
-}
-
-.wel h5 {
-    background-color: darkcyan;
-
-
-}
 
 .down {
     display: flex;
@@ -24,35 +11,37 @@ h5 {
 
 .cards {
     display: flex;
+height: 30vh;
 }
 
 #text {
     height: 8vh;
     font-weight: bold;
     text-align: center;
-    background-color: darkcyan;
+    background-color: #0D6EFD;
 }
 
 #one {
     margin-right: 2vw;
-    background-color: aquamarine;
+}
+/* #canvas {
+} */
+#pie{
+    margin-top: -3vh;
 }
 
 #two {
     margin-right: 2vw;
-    background-color: bisque;
 
 }
 
 #three {
     margin-right: 2vw;
-    background-color: coral;
 
 }
 
 #four {
     margin-right: 2vw;
-    background-color: crimson;
 
 }
 

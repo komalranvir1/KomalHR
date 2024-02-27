@@ -1,93 +1,17 @@
-<h5>My Attendence Record</h5>
-<div class="box">
- <form 
- > 
- <!-- [formGroup]="attendenceForm"  -->
-    <!-- <div class="row ">
-      <div class="col-md-3">
-         <label for="">Check In</label>
-         <input type="time" class="form-control" formControlName="checkIn">
-      </div>
-      <div class="col-md-3">
-         <label for="">Check Out</label>
+<!-- <h5> Attendence Record</h5> -->
 
-         <input type="time" class="form-control" formControlName="checkOut">
-      </div>
-      <div class="col-md-3">
-         <label for="date">Date </label>
-         <input type="date" class="form-control" formControlName="date"> -->
-         <!-- <select name="status" id="status" class="form-control" >
-            <option selected value="1">Select</option>
-            <option  value="2">Present</option>
-            <option value="3">Absent</option>
-            <option value="4">Half Day</option>
-            <option value="5">Weekly/off</option>
-            <option value="6">Holiday</option>
-            <option value="7">Sick</option>
-
-        </select> -->
-      <!-- </div> -->
-      <div class="col-md-3">
-         <!-- <label for="">Leave Exist</label> -->
-        <!-- <select name="leave" id="leave" class="form-control">
-            <option selected value="1">Select</option>
-            <option  value="2">Yes</option>
-            <option value="3">No</option>
-          
-
-        </select> -->
-      </div>
-
-   <!-- </div>  -->
-   <div class="btns">
-      <button type="button" class="btn btn-primary" >Submit</button>&nbsp;
-      <button type="button" class="btn btn-info"
-        >View</button>
-
-   </div>
-   </form>
-
-</div>
-<br><br>
-<!-- <form>
-
-   <div>
-      <label for="employee_id">Employee ID:</label>
-      <input type="number"  id="employee_id" class="form-control" formControlName="employee_id"/>
-    </div>
-
- <div>
-   <label for="date">Date:</label>
-   <input type="date" id="date" class="form-control" formControlName="date"/>
- </div><br>
- <button class="btn btn-info" (click)="markAttendance()">Mark Attendance</button>&nbsp;
-<button  (click)="getEmployeeAttendance(2)">Attendence</button>
- <button class="btn btn-primary" (click)="getAttendanceByEmployeeIdAndDate(employeeId,date)">Get Attendance</button>
-</form> -->
-<!-- <div *ngFor="let record of attendance">
-   <p>Employee ID: {{ record.employeeId }}</p>
-   <p>Date: {{ record.date | date }}</p>
-   <p>Status: {{ record.checkIn }}</p>
-   <p>Status: {{ record.checkOut }}</p>
-
-   <hr />
- </div> -->
-<!-- employee.component.html -->
 <div>
    <div>
-      <h4>Add New Attendance</h4>
-      <form [formGroup]="attendenceForm">
+      <!-- <form [formGroup]="attendenceForm">
         <div class="row">
          <div class="col-md-2">
              <label for="id">EmployeeID:</label>
             <input type="number" class="form-control" formControlName="employee_id">
-            <!-- [(ngModel)]="newAttendance.date" -->
          </div>
 
          <div class="col-md-2">
              <label for="date">Date:</label>
             <input type="date" class="form-control" formControlName="date">
-            <!-- [(ngModel)]="newAttendance.date" -->
          </div>
 
          <div class="col-md-2">
@@ -103,13 +27,34 @@
          <button class="btn btn-primary" (click)="addAttendence()">Save Attendance</button>&nbsp;
          <button class="btn btn-info" (click)="loadAttendances()">View Attendance</button>
 
-      </form>
+      </form> -->
+      <table class="table">
+         <thead>
+             <tr>
+                 <th>Employee Name</th>
+                 <th>Date</th>
+                 <th>Check-In</th>
+                 <th>Check-Out</th>
+                 <th>Total Hours</th>
+     
+             </tr>
+         </thead>
+         <tbody>
+             <tr *ngFor="let attendance of attendanceList">
+                 <td> Manisha</td>
+                 <td> {{attendance.date}}</td>
+                 <td>{{ attendance.checkIn }}</td>
+                 <td>{{ attendance.checkOut }}</td>
+                 <td>{{ attendance.workingHour }}</td>
+     
+             </tr>
+         </tbody>
+     </table>
    </div><br><br>
 
-   <h4>Employee Attendances</h4>
-   <ul>
+   <!-- <ul>
       <li *ngFor="let attendance of attendances">
-         {{ attendance.date }} - Check In: {{ attendance.checkIn }} - Check Out: {{ attendance.checkOut }}
+        {{ attendance.date }} - Check In: {{ attendance.checkIn }} - Check Out: {{ attendance.checkOut }}
       </li>
-   </ul>
+   </ul> -->
 </div>

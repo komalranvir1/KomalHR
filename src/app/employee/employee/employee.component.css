@@ -8,12 +8,19 @@
   color: #1a1717;
 
 }
+.checkin{
+  margin-left: 2vw;
+  margin-top: 2vh;
+}
+.btns{
+  margin-top: 2vh;
+margin-right: 3vw;
+}
 .btn {
-  /* align-items: start; */
   text-align: center;
 }
 .header {
-  margin-right: 32vw;
+  margin-right: 31vw;
   margin-top: -9vh;
   position: relative;
   width: 84.5vmax;
@@ -54,7 +61,7 @@
     
     /* Active/current link */
     .sidebar a.active {
-      background-color: #242e3b;
+      background-color: #0D6EFD;
       color: white;
     }
   

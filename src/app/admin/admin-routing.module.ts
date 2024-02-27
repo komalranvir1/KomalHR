@@ -8,6 +8,7 @@ import { AttendenceComponent } from './attendence/attendence.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { AdminComponent } from './admin/admin.component';
 import { SalaryComponent } from './salary/salary.component';
+import { HolidaysComponent } from './holidays/holidays.component';
 
 const routes: Routes = [
   
@@ -20,6 +21,7 @@ const routes: Routes = [
       {path: "employee-detail/:id", component: EmployeeDetailComponent},
       {path: "attendence", component: AttendenceComponent},
       {path: "salary", component: SalaryComponent},
+      {path: "Holiday", component: HolidaysComponent},
 
 
 

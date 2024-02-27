@@ -10,11 +10,12 @@ h2 {
 }
 
 th {
-    background-color: #242e3b;
+    background-color: #0D6EFD;
     color: white;
 }
 
 .parent {
+    padding: 1vw 0vw;
     display: flex;
 }
 
@@ -25,4 +26,7 @@ th {
 .child2 {
     margin-left: 50vw;
     position: relative;
+}
+.table{
+    margin: 0vw 1vw;
 }

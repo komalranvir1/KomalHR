@@ -4,58 +4,102 @@
 
 }
 
+#location {
+  display: flex;
+  margin-left: 6vw;
+  margin-top: -1vw;
+}
+
 .btn {
   align-items: start;
   text-align: start;
 }
 
+.card-title {
+  color: #0D6EFD;
+  text-align: center;
+  padding-bottom: 1vh;
 
-/* .atdBtn {
+}
+
+#newHire h6 {
+
+  display: inline;
+}
+
+#holiday {
+  border-top: 1px solid rgb(230, 215, 215);
+padding: 0.5vw;
+font-weight: 500;
+
+}
+
+
+#holi {
+  margin-top: -4vh;
+  margin-left: 15vw;
+}
+#newHire {
   
-  padding-left: 25%;
-  align-items: center;
-  height: 40vh;
-  width: 40vw;
-  background-color: rgb(183, 193, 201);
-} */
+  border-top: 1px solid rgb(230, 215, 215);
+  display: flex;
+}
+
+#newHire img {
+
+  height: 50px;
+  width: 80px;
+}
+
 
 h4 {
   font-weight: bold;
-  /* padding: 20vh; */
 }
 
 i {
   font-weight: bold;
 }
-.row{
-  padding: 0vw;
+
+.row {
+  /* margin: 2vw; */
   display: flex;
   justify-content: space-evenly;
 }
-.card{
-height: 60vh;
+
+.card {
+  height: 60vh;
 }
-#one{
+
+#one {
   width: 26vw;
 }
-#two{
+
+#two {
   width: 26vw;
+  overflow: scroll;
 
 }
-#three{
+
+#three {
+
+  overflow: scroll;
   width: 27vw;
 }
-.down{
+
+.down {
   justify-content: space-evenly;
   display: flex;
 }
-#four{
-  width: 26vw;
-}
-#five{
-  width: 26vw;
 
+#four {
+  width: 26vw;
 }
-#six{
+
+#five {
+  width: 26vw;
+  overflow: scroll;
+}
+
+#six {
   width: 27vw;
 }

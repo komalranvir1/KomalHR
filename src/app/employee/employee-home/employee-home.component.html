@@ -1,4 +1,3 @@
-
 <div *ngIf="!isShowable">
   <form [formGroup]="loginForm">
     <div class="col-md-3">
@@ -22,22 +21,31 @@
     <div class="card-body">
       <h5 class="card-title">Announcements</h5>
       <h6 class="card-subtitle mb-2 text-muted"></h6>
-      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-  
+
     </div>
   </div>
-  <div class="card"  id="two">
+  <div class="card" id="two">
     <div class="card-body">
       <h5 class="card-title">Work Anniversery</h5>
-      <h6 class="card-subtitle mb-2 text-muted"></h6>
-  
+      <ul id="newHire" *ngFor="let emp of newHire">
+        <div> <img [src]="emp.image" alt=""> {{emp.name}}
+          <div id="location"> {{emp.location}}
+          </div>
+        </div>
+
+      </ul>
     </div>
   </div>
-  <div class="card"  id="three" >
+  <div class="card" id="three">
     <div class="card-body">
       <h5 class="card-title">New Hires</h5>
-      <h6 class="card-subtitle mb-2 text-muted"></h6>
-  
+      <ul id="newHire" *ngFor="let emp of newHire">
+        <div> <img [src]="emp.image" alt=""> {{emp.name}}
+          <div id="location"> {{emp.location}}
+          </div>
+        </div>
+
+      </ul>
     </div>
   </div>
 </div><br>
@@ -46,22 +54,31 @@
     <div class="card-body">
       <h5 class="card-title">Favourites</h5>
       <h6 class="card-subtitle mb-2 text-muted"></h6>
-  
+
     </div>
   </div>
-  <div class="card"  id="five">
+  <div class="card" id="five">
     <div class="card-body">
-      <h5 class="card-title">Request for Approval</h5>
-      <h6 class="card-subtitle mb-2 text-muted"></h6>
-  
+      <h5 class="card-title">Upcomming Holidays</h5>
+      <div id="holiday" *ngFor="let holi of Holidays">
+        <div> {{holi.upcomingHoliday}}
+          <div id="holi">
+            <div id="date"> {{holi.holidayDate}}</div>
+            <div>{{holi.day}}</div>
+          </div>
+        </div>
+      
+
+
+      </div>
     </div>
   </div>
-  <div class="card"  id="six" >
+  <div class="card" id="six">
     <div class="card-body">
       <h5 class="card-title">Attendence</h5>
       <h6 class="card-subtitle mb-2 text-muted">
       </h6>
-  
+
     </div>
   </div>
 </div>

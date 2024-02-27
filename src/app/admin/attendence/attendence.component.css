@@ -4,7 +4,9 @@ color: darkblue;
 label{
     color: white;
 }
-
+th{
+    background-color: #0D6EFD;
+}
 .box{
     width: 75vmax;
     height:35vmin;

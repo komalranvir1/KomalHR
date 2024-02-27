@@ -31,6 +31,15 @@ export class AdminHomeComponent {
     this.step = url.substring(28, urlLength);
 
   }
+  Hub(){
+    let promiseData = new Promise((resolved, reject) => {
+      this.router.navigateByUrl('/admin/home');
+      resolved(10);
+    });
+    promiseData.then(() => {
+      this.setActive();
+    });
+  }
 
   Home() { 
     let promiseData = new Promise((resolved, reject) => {

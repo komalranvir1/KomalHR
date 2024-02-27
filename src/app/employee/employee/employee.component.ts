@@ -15,12 +15,11 @@ export class EmployeeComponent implements OnInit {
   private intervalId: any;
   checkInStatus: any;
   isRed: boolean = false;
-  currentState: string="";
-  employeeData:any;
+  currentState: string = "";
+  employeeData: any;
   employeeId: any;
 
-  // employeeData: string | null;
-  constructor(private router: Router,private empService:EmployeeService) {
+  constructor(private router: Router, private empService: EmployeeService) {
 
   }
 
@@ -33,8 +32,8 @@ export class EmployeeComponent implements OnInit {
     }, 1000);
     const jsonString = localStorage.getItem('auth');
     this.employeeData = jsonString;
-     this.checkInStatus = localStorage.getItem('checkInStatus')
-     this.currentState = localStorage.getItem('buttonState') || 'checkin';
+    this.checkInStatus = localStorage.getItem('checkInStatus')
+    this.currentState = localStorage.getItem('buttonState') || 'checkin';
   }
 
   setActive() {
@@ -42,12 +41,14 @@ export class EmployeeComponent implements OnInit {
     let url = window.location.href;
     let urlLength = url.length;
     console.log(urlLength);
-    
+
     this.step = url.substring(31, urlLength);
 
   }
+  LogIn() {
 
-  Home() { 
+  }
+  Home() {
     let promiseData = new Promise((resolved, reject) => {
       this.router.navigateByUrl('/employee/home');
       resolved(10);
@@ -58,16 +59,16 @@ export class EmployeeComponent implements OnInit {
 
   }
   profile() {
-  
-      let promiseData = new Promise((resolved, reject) => {
-        this.router.navigateByUrl('/employee/profile');
-        resolved(10);
-      });
-      promiseData.then(() => {
-        this.setActive();
-      });
+
+    let promiseData = new Promise((resolved, reject) => {
+      this.router.navigateByUrl('/employee/profile');
+      resolved(10);
+    });
+    promiseData.then(() => {
+      this.setActive();
+    });
   }
-  Salary(){
+  Salary() {
     let promiseData = new Promise((resolved, reject) => {
       this.router.navigateByUrl('/employee/salary');
       resolved(10);
@@ -77,7 +78,7 @@ export class EmployeeComponent implements OnInit {
     });
 
   }
-  contact(){
+  contact() {
     this.router.navigateByUrl('contact')
   }
   attendence() {
@@ -90,21 +91,21 @@ export class EmployeeComponent implements OnInit {
     });
 
   }
-  reg(){
+  reg() {
     this.router.navigateByUrl('/employee/regulization')
 
   }
   Leave() {
     this.router.navigateByUrl('/employee/leave')
   }
-  onClickButton(){
+  onClickButton() {
     if (this.currentState === 'checkin') {
-      this.checkIn();  
+      this.checkIn();
     } else if (this.currentState === 'checkout') {
-      this.checkOut() ;
-        
+      this.checkOut();
+
     }
-  
+
   }
   checkIn() {
 

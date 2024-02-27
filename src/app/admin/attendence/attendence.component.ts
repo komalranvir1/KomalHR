@@ -9,8 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './attendence.component.css'
 })
 export class AttendenceComponent implements OnInit {
-  // attendance: any = [];
-  submitted = false;
+  attendanceList  :any;
 
   attendances: any = [];
   attendenceForm: FormGroup;
@@ -31,18 +30,11 @@ export class AttendenceComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-  
+  this.loadAttendances();
   }
   get f() { return this.attendenceForm.controls; }
 
-  // createAttendence() {
-  //     let createAtd = this.attendenceForm.value;
-  //     this.employeeService.createAttendence(createAtd).subscribe((res: any) => {
-  //       console.log(res);
-
-  //     });
-    
-  // }
+ 
 addAttendence(){
   let attendance = this.attendenceForm.value;
   this.employeeService.addAttendence(attendance).subscribe((res:any) => {
@@ -51,60 +43,22 @@ console.log(res);
   });
 }
   loadAttendances() {
-    this.employeeService.getEmployeeAttendances(this.employeeId).subscribe((data: any) => {
+    const jsonString = localStorage.getItem('auth');
+
+    if (jsonString !== null) {
+      const parsedObject = JSON.parse(jsonString);
+      this.employeeId = parsedObject.id;
+
+      console.log(parsedObject);
+    
+    this.employeeService.getAattendenceOfEmployee(this.employeeId).subscribe((data: any) => {
       console.log(data);
-      this.attendances = data;
+      this.attendanceList = data;
     });
   }
-
-  // saveAttendance() {
-  //   this.newAttendance = this.attendenceForm.value;
-  //   this.employeeService.saveAttendance(this.employeeId, this.newAttendance).subscribe((res: any) => {
-  //     console.log(res);
-  //     this.loadAttendances();
-  //     this.newAttendance = {}; 
-  //   });
-  // }
-  getAttendanceByEmployeeIdAndDate(employee_id: any, date: Date): void {
-
-    if (this.employeeId !== undefined && this.date !== undefined) {
-      this.employeeService.getAttendanceByEmployeeIdAndDate(this.employeeId, this.date)
-        .subscribe(res => {
-        
-          this.attendances = res;
-
-        }, error => {
-          console.error('Error getting attendance', error);
-        });
-    } else {
-      console.error('Invalid values for API call');
-    }
   }
-  // this.employeeService.getAttendanceByEmployeeIdAndDate(this.employee_id,this.date).subscribe((res: any) => {
-  //   console.log(res);
-  // });
 
 
-  // getEmployeeAttendance(id: any) {
-  //   this.employeeService.getEmployeeAttendance(this.id).subscribe((res: any) => {
-  //     console.log(res);
-
-  //   });
-  // }
-
-  // markAttendance(): void {
-  //   let newAttendance = this.attendenceForm.value;
-
-  //   // newAttendance.status = 'present';
-
-  //   this.employeeService.markAttendance(newAttendance).subscribe(
-  //     (res: any) => {
-  //       console.log('Attendance marked successfully: ', res);
-
-  //     },
-
-  //   );
-  // }
 
 
 

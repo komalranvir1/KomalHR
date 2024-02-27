@@ -1,48 +1,33 @@
-<div class="wel">
-    <h6>Welcome To Hr Hub</h6>
-</div>
 
+<br>
 <div class="cards">
     <div class="card" style="width: 18rem;" id="one">
-        <div class="card-body">
-            <!-- <h5 class="element-box-header">Web Checkin</h5> -->
-            <div>
-                <h5 class="text-center"><i class="fa fa-calendar"></i> Thu 11 Jan 2024 </h5>
-                <h5 class="text-center"> 16:04:20 </h5>
-                <!-- <div class="text-center mb-3"><button class="btn btn-primary btn-medium btn-block"><i
-                            class="fa fa-clock-o"></i> CHECK IN
-                    </button></div> -->
-            </div>&nbsp;
-            <!-- <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a> -->
-        </div>
+        <div style="display: block; width: 155px">
+            <canvas id="bar" height="360">{{ barChart }}</canvas>
+          </div>      
     </div>
-    <div class="card" style="width: 18rem;" id="two">
+    <div class="card" style="width: 20rem;" id="two">
         <div class="card-body">
-            <h4 style="text-align: center;"> <i class="ri-file-user-fill"></i>
-            </h4>
-            <h5 class="card-title"> Registered Employee</h5>
-            <h4>Employee = {{employeedata.length}}</h4>
-            <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
-
-            <!-- <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a> -->
+            <!-- <h5><i class="ri-file-user-fill"></i>Employee = {{employeedata.length}}</h5> -->
+            <div style="display: block; width: 155px">
+                <canvas id="donut" height="320">{{ donutChart }}</canvas>
+            </div> 
         </div>
     </div>
     <div class="card" style="width: 18rem;" id="three">
         <div class="card-body">
-            <h4 style="text-align: center;"> <i class="ri-pass-pending-fill"></i>
+            <h4 style="text-align: center;"> 
             </h4>
-            <h5 class="card-title">Employee Attendence</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
-            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-
+            <div style="display: block; width: 165px">
+                <canvas id="pie" height="357">{{ pieChart }}</canvas>
+            </div>
         </div>
     </div>
     <div class="card" style="width: 18rem;" id="four">
         <div class="card-body">
-            <h5 class="card-title">Departments</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+            <div style="display: block; width: 145px">
+                <canvas id="line" height="317">{{ lineChart }}</canvas>
+            </div>
 
         </div>
     </div>
@@ -58,6 +43,9 @@
         <div id="text">Employee Attendence</div>
 
         <div class="card-body">
+            <div class="text-center mb-3"><button class="btn btn-primary btn-medium btn-block" (click)="addHolidays()">
+                Add Holidays
+       </button></div>
             <h5 class="card-title"></h5>
             <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
        

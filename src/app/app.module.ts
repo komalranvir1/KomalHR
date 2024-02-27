@@ -7,7 +7,6 @@ import { AdminModule } from './admin/admin.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
-import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,7 @@ import { NgChartsModule } from 'ng2-charts';
     FormsModule,
     SharedModule,
     HttpClientModule,
-    NgChartsModule,
+    
    
     
 

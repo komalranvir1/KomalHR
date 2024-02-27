@@ -22,10 +22,19 @@ export class EmployeeHomeComponent implements OnInit {
   elapsedTime: number = 0;
   private intervalId: any;
   loginForm: FormGroup;
-   checkInStatus: any;
+  checkInStatus: any;
   isRed: boolean = false;
-  currentState: string="";
+  currentState: string = "";
 
+  newHire = [
+    { image: "/assets/images.jpg", name: "Komal Ranvir", location: "Mumbai" },
+    { image: "/assets/images.jpg", name: "Komal Ranvir", location: "Mumbai" },
+    { image: "/assets/images.jpg", name: "Komal Ranvir", location: "Mumbai" },
+    { image: "/assets/images.jpg", name: "Komal Ranvir", location: "Mumbai" },
+  ]
+  Holidays = [
+    { image: "/assets/Holiday.jpg", upcomingHoliday: "", day: "",holidayDate:"" },
+  ]
   constructor(private fb: FormBuilder, private http: HttpClient, private datePipe: DatePipe, private router: Router, private empService: EmployeeService) {
     this.loginForm = this.fb.group({
       name: ['', Validators.required],
@@ -38,19 +47,19 @@ export class EmployeeHomeComponent implements OnInit {
     }, 1000);
     const jsonString = localStorage.getItem('auth');
     this.employeeData = jsonString;
-     this.checkInStatus = localStorage.getItem('checkInStatus')
-     this.currentState = localStorage.getItem('buttonState') || 'checkin';
-
+    this.checkInStatus = localStorage.getItem('checkInStatus')
+    this.currentState = localStorage.getItem('buttonState') || 'checkin';
+    this.allHolidys();
   }
 
-  onClickButton(){
+  onClickButton() {
     if (this.currentState === 'checkin') {
-      this.checkIn();  
+      this.checkIn();
     } else if (this.currentState === 'checkout') {
-      this.checkOut() ;
-        
+      this.checkOut();
+
     }
-  
+
   }
   checkIn() {
 
@@ -117,6 +126,13 @@ export class EmployeeHomeComponent implements OnInit {
     });
 
   }
- 
- 
+
+  allHolidys() {
+    this.empService.getAllHolidays().subscribe((res: any) => {
+      console.log(res);
+      this.Holidays = res;
+
+    })
+  }
+
 }

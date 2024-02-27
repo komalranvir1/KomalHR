@@ -7,7 +7,6 @@ import { EmployeeProfileComponent } from './employee-profile/employee-profile.co
 import { EmployeeHomeComponent } from './employee-home/employee-home.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { AttendenceComponent } from './attendence/attendence.component';
-import { NgChartsModule } from 'ng2-charts';
 import { LeaveFormComponent } from './leave-form/leave-form.component';
 import { RegulizationComponent } from './regulization/regulization.component';
 import { InputTextModule } from 'primeng/inputtext';
@@ -32,14 +31,12 @@ import { DropdownModule } from 'primeng/dropdown';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    NgChartsModule,
     ButtonModule,
     InputTextModule,
     CardModule,
     CalendarModule,
     InputTextareaModule,
-    DropdownModule
-
+    DropdownModule,
   ],
   providers: [DatePipe],
 })

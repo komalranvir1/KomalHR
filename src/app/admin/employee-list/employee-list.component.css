@@ -1,8 +1,11 @@
 .head h3 {
   /* background-color: rgb(66, 63, 63); */
-  text-align: center;
+margin-left: 30vw;
+  display: flexbox;
 }
-
+#pdf{
+  margin-top: -10vh;
+margin-left: 60vw;}
 a {
   text-decoration: none;
 }
@@ -12,7 +15,9 @@ a {
 li {
   list-style: none;
 }
-
+th{
+  background-color: #0D6EFD;
+}
 
 @media screen and (max-width: 768px) {
   #sidebar {
